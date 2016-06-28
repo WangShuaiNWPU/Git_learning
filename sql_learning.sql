@@ -1,4 +1,4 @@
-﻿set character set utf8;
+﻿/* set character set utf8;
 create database ws_test5 default character set utf8;
 
 use ws_test5;
@@ -16,7 +16,7 @@ insert into students values(Null,"王刚","男",20,"13811371377");
 insert into students(name,sex,age)values("孙丽华","女",21);
 insert into students values(null,"郑平","男",30,"15478965486");
 insert into students values(null,"王帅","男",24,"18165383565");
-insert into students values(null,"杨宁","女",40,"18681851800");
+insert into students values(null,"杨宁","女",40,"18681851800"); */
 
 /* select name,age from students; */
 
