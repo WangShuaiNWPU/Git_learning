@@ -1,6 +1,7 @@
-﻿create database ws_test4 character set utf8;
+﻿set character set utf8;
+create database ws_test5 default character set utf8;
 
-use ws_test4;
+use ws_test5;
 create table students
 (
     id int unsigned not null auto_increment primary key,  
@@ -10,6 +11,7 @@ create table students
     tel char(13) null default "-"
 )default charset=utf8;
 
+set character set utf8;
 insert into students values(Null,"王刚","男",20,"13811371377");
 insert into students(name,sex,age)values("孙丽华","女",21);
 insert into students values(null,"郑平","男",30,"15478965486");
