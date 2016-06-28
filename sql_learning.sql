@@ -30,6 +30,42 @@ insert into students values(null,"杨宁","女",40,"18681851800"); */
 update students set age = age+1; */
 
 
+/* alter table students add address char(60);
+
+alter table students add birthday date after age;
+
+alter table students change tel telphone char(13) default "-";
+
+alter table students change name name char(16) not null;
+ */
+ 
+/* alter table students drop birthday; */
+
+alter table students rename workmates;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
