@@ -570,15 +570,144 @@
 # def int2(x,base = 2):
     # return int(x,base)
     
-import functools
+# import functools
+
+# # int2 = functools.partial(int,base = 2)
 
 # int2 = functools.partial(int,base = 2)
 
-int2 = functools.partial(int,base = 2)
+# print(int2('1010101'))
 
-print(int2('1010101'))
+# print(int2('1010101',base = 10))
 
-print(int2('1010101',base = 10))
+# std1 = {'name':'Michael','score':98}
+# std2 = {'name':'Bob','score',81}
+
+# def print_score(std):
+    # print('%s:%s' % (std['name'],std['score'])
+    
+# class Student(object):
+
+    # def __init__(self,name,score):
+        # self.name = name
+        # self.score = score
+        
+    # def print_score(self):
+        # print('%s:%s' % (self.name,self.score))
+        
+# class Student(object):
+
+    # def __init__(self,name,score):
+        # self.__name = name
+        # self.__score = score
+        
+    # def print_score(self):
+        # print('%s:%s' % (self.__name,self.__score))     
+
+    # def get_name(self):
+        # return self.__name
+        
+    # def get_score(self):
+        # return self.__score
+        
+    # def set_score(self,score):
+        # if 0<=score<=100:
+            # self.__score = score
+        # else:
+            # raise ValueError('bad score')
+        
+        
+# bart = Student('Bart Simpson',59)
+# lisa = Student('Lisa Simpson',87)
+
+# bart.print_score()
+# lisa.print_score()        
+
+########继承和多态
+class Animal(object):
+    def run(self):
+        print('Animal is running……')
+        
+class Dog(Animal):
+    def run(self):
+        print('Dog is running……')
+        
+    def eat(self):
+        print('Eating meat……')
+    
+class Cat(Animal):
+    def run(self):
+        print('Cat is running……')
+
+class Tortoise(Animal):
+    def run(self):
+        print('Tortoise is running slowly...')
+    
+def run_twice(ws):
+    ws.run()
+    ws.run()
+        
+dog = Dog()
+# dog.run()
+
+cat = Cat()
+# cat.run()
+
+# print(isinstance(dog,Dog))
+# print(isinstance(cat,Cat))
+
+# print(isinstance(dog,Animal))
+# print(isinstance(cat,Animal))
+
+# run_twice(Tortoise())
+# run_twice(cat)
+
+# print(type(dog))
+
+# print(type(123)==int)
+
+# import types
+
+# def fn():
+    # pass
+
+# type(fn) == types.FunctionType
+# type(abs)==types.BuiltinFunctionType
+# type(lambda x:x)==types.LambdaType
+# type((x for x in range(10))==types.GeneratorType
+
+# isinstance([1,2,3],(list,tuple))
+# isinstance((1,2,3),(list,tuple))
+
+# class MyDog(object):
+    # def __len__(self):
+        # return 100
+    # def __ppp__(self):
+        # print('ws')
+# dog = MyDog()
+
+# # print(len(dog))
+# # print(dog.__len__())
+
+# dog.__ppp__()
+# ppp(dog)
+
+class MyObject(object):
+    def __init__(self):
+        self.x = 9
+    
+    def power(self):
+        return self.x*self.x
+        
+obj = MyObject()
+
+
+
+
+
+
+
+
 
 
 
