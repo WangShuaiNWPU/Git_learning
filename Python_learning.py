@@ -624,33 +624,33 @@
 # lisa.print_score()        
 
 ########继承和多态
-class Animal(object):
-    def run(self):
-        print('Animal is running……')
+# class Animal(object):
+    # def run(self):
+        # print('Animal is running……')
         
-class Dog(Animal):
-    def run(self):
-        print('Dog is running……')
+# class Dog(Animal):
+    # def run(self):
+        # print('Dog is running……')
         
-    def eat(self):
-        print('Eating meat……')
+    # def eat(self):
+        # print('Eating meat……')
     
-class Cat(Animal):
-    def run(self):
-        print('Cat is running……')
+# class Cat(Animal):
+    # def run(self):
+        # print('Cat is running……')
 
-class Tortoise(Animal):
-    def run(self):
-        print('Tortoise is running slowly...')
+# class Tortoise(Animal):
+    # def run(self):
+        # print('Tortoise is running slowly...')
     
-def run_twice(ws):
-    ws.run()
-    ws.run()
+# def run_twice(ws):
+    # ws.run()
+    # ws.run()
         
-dog = Dog()
+# dog = Dog()
 # dog.run()
 
-cat = Cat()
+# cat = Cat()
 # cat.run()
 
 # print(isinstance(dog,Dog))
@@ -692,31 +692,367 @@ cat = Cat()
 # dog.__ppp__()
 # ppp(dog)
 
-class MyObject(object):
-    def __init__(self):
-        self.x = 9
+# class MyObject(object):
+    # def __init__(self):
+        # self.x = 9
     
-    def power(self):
-        return self.x*self.x
+    # def power(self):
+        # return self.x*self.x
         
-obj = MyObject()
+# obj = MyObject()
+
+
+# class Student(object):
+    # def __init__(self,name):
+        # self.name = name
+        
+# s = Student('Bob')
+# s,score = 90
+
+# class Student(object):
+    # name = 'Student'
+    
+# s = Student()
+# print(s.name)
+
+# s.name = 'Michael'
+# print(s.name)
+
+# print(Student.name)
+
+# del s.name
+
+# class Student(object):
+    # pass
+    
+# s = Student()
+# s.name = 'Michael'
+# print(s.name)
+
+# def set_age(self,age):
+    # self.age = age
+    
+# from types import MethodType
+# s.set_age = MethodType(set_age,s)
+# s.set_age(25)
+# s.age
+
+# s2 = Student()
+# s2.set_age(25)
+
+# def set_score(self,score):
+    # self.score = score
+    
+# Student.set_score = set_score
+
+# class Student(object):
+    # __slots__ = ('name','age')
+
+# s = Student()
+# s.name = 'Michael'
+# s.age = 25
+# s.score = 99
+
+# class Student(object):
+    
+    # def get_score(self):
+        # return self.score
+        
+    # def set_score(self,value):
+        # if not isinstance(value,int):
+            # raise ValueError('score must be an integer!')
+        # if value<0 or value >100:
+            # raise ValueError('score must between 0~100')
+        # self.score = value
+
+# s = Student()
+# s.set_score(60)
+# print(s.score)
 
 
 
+#########使用@property######
+# class Student(object):
+
+    # @property
+    # def score(self):
+        # return self.score
+        
+    # @score.setter
+    # def score(self,value):
+        # if not isinstance(value,int):
+            # raise ValueError('score must be an integer!')
+        # if value<0 or value >100:
+            # raise ValueError('score must between 0~100')
+        # self.score = value
+
+    # @property
+    # def birth(self):
+        # return self.birth
+        
+    # @birth.setter
+    # def birth(self,value):
+        # self.birth = value
+        
+    # @property
+    # def age(self):
+        # return 2016 - self.birth
+    
+###练习题###
+
+# class Screen(object):
+    
+    # @property
+    # def width(self):
+        # return self.wid
+        
+    # @width.setter
+    # def width(self,value):
+        # self.wid = value
+        
+    # @property
+    # def height(self):
+        # return self.hei
+        
+    # @height.setter 
+    # def height(self,value):
+        # self.hei = value
+        
+    # @property
+    # def resolution(self):
+        # return self.wid*self.hei
+        
+# s = Screen()
+# s.width = 1024
+# s.height = 768
+# print(s.resolution)
+
+########多重继承#####
+# class Animal(object):
+    # pass
+    
+# class Mammal(object)：
+    # pass
+    
+# class Bird(object):
+    # pass
+    
+# class Dog(Mammal,Runnable):
+    # pass
+    
+# class Bat(Mammal,Flyable):
+    # pass
+    
+# class Parrot(Bird):
+    # pass
+    
+# class Ostrich(bird):
+    # pass
+    
+# class Runnable(object):
+    # def run(self):
+        # print('Running...')
+        
+# class Flyable(object):
+    # def fly(self):
+        # print('Flying...')
+        
+#####定制类############
+# class Student(object):
+    # def __init__(self,name):
+        # self.name = name
+        
+    # def __str__(self):
+        # return 'Student object (name:%s)' % self.name
+        
+# print(Student('Michael'))
+
+# class Fib(object):
+    # def __init__(self):
+        # self.a,self.b = 0,1
+        
+    # def __iter__(self):
+        # return self
+        
+    # def __next__(self):
+        # self.a, self.b = self.b,self.a + self.b
+        # if self.a>100:
+            # raise StopIteration();
+        # return self.a
+        
+    # def __getitem__(self,n):
+        # if isinstance(n,int):
+            # a,b = 1,1
+            # for x in range(n):
+                # a,b = b,a+b
+            # return a
+        # if isinstance(n,slice):
+            # start = n.start
+            # stop = n.stop
+            # if start is None:
+                # start = 0
+            # a,b = 1,1
+            # L = []
+            # for x in range(stop):
+                # if x>=start:
+                    # L.append(a)
+                # a,b = b,a+b
+            # return L
+                
+            
+
+# # for n in Fib():
+    # # print(n)
+
+# f = Fib()
+# print(f[0:5])
+# print(f[:10])
+
+# class Student(object):
+    # def __init__(self):
+        # self.name = 'Michael'
+        
+    # def __getattr__(self,attr):
+        # if attr == 'score':
+            # return 99
+        # if attr = 'age':
+            # return lambda:25
+        # raise AttributeError('\'Student\'object has not attribute \'%s\'' % attr)
+
+    # def __call__(self):
+        # print('My name is %s:' % self.name)
+        
+# from enum import Enum,unique
+
+# Month = Enum('Month',('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'))
+
+# # for name,member in Month.__members__.items():
+    # # print(name,'=>',member,',',member.value)
+
+# @unique
+# class Weekday(Enum):
+    # Sun = 0
+    # Mon = 1 
+    # Tue = 2 
+    # Wed = 3 
+    # Thu = 4 
+    # Fri = 5 
+    # Sat = 6
+
+# print(Weekday.Tue)
+# print(Weekday(1))
+
+#########使用元类###########
+# def fn(self,name = 'world'):
+    # print('Hello,%s' % name)
+    
+# Hello = type('Hello',(object,),dict(hello = fn))
+
+# h = Hello()
+# h.hello()
+
+# a = 1
+# def fun(a):
+    # a = 2
+    
+# fun(a)
+# print(a)
+
+# b = [0]
+# def fun1(a):
+    # a.append(1)
+    # a = [2]
+    
+# fun1(b)
+# print(b)
+
+# def try_to_change_list_reference(the_list):
+    # print ('got', the_list)
+    # the_list = ['and', 'we', 'can', 'not', 'lie']
+    # print ('set to', the_list)
+
+# outer_list = ['we', 'like', 'proper', 'English']
+
+# print ('before, outer_list =', outer_list)
+# try_to_change_list_reference(outer_list)
+# print ('after, outer_list =', outer_list)
 
 
+# ###多个装饰器
+# def makebold(fn):
+    # def wrapped():
+        # return "<b>" + fn() + "</b>"
+    # return wrapped
 
+# def makeitalic(fn):
+    # def wrapped():
+        # return "<i>" + fn() + "</i>"
+    # return wrapped
 
+# @makebold
+# @makeitalic
+# def hello():
+    # return "hello world"
 
+# print (hello()) ## returns <b><i>hello world</i></b>
 
+# def shout(word = 'yes'):
+    # return word.capitalize()+'!'
 
+# scream = shout
 
+# del shout
+# try:
+    # print(shout())
+# except NameError as e:
+    # print (e)
+    
+# print(scream())
+# print(scream())
+# print(shout('wangshuai'))
 
+# print('abc''def')
 
+# def talk():
+    # def whisper(word = 'yes'):
+        # return word.lower()+'...'
+        
+    # print (whisper())
 
+# talk()
 
+# try:
+    # print(whisper())
+# except NameError as e:
+    # print (e)
 
+# def getTalk(kind = 'shout'):
+    # def shout(word = 'yes'):
+        # return word.capitalize() + '!'
+        
+    # def whisper(word = 'yes'):
+        # return word.lower() + '...'
+        
+    # if kind == 'shout':
+        # return shout
+    # else:
+        # return whisper
+        
+# talk = getTalk()
 
+# print(talk)
+# print(talk())
+
+# def doSomethingBefore(func):
+    # print('I do something before then I call the function you gave me')
+    # print (func(-1))
+
+# doSomethingBefore(abs)
+
+# ws = {'a':1,'b':2,'c':3,'d':4}
+# # print(ws.items())
+# for n,m in ws.items():
+    # print(n,m)
 
 
 
