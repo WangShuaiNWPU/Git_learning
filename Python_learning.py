@@ -1055,7 +1055,8 @@
     # print(n,m)
 
 
-
+for i in 'aswefas':
+    print('i=',i)
 
 
 
